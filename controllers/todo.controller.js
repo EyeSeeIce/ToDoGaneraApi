@@ -28,7 +28,7 @@ const getAll = async (req, res) => {
     const todos = await todo.getAll({ id: user_id })
 
     res.send({
-      todos,
+      todos: todos.sort((a, b) => a.id - b.id),
     })
   } catch (e) {
     res.status(400).send({ message: e.errors?.map(e => ({ field: e.path, message: e.message })) })
