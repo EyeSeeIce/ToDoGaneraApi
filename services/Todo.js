@@ -62,7 +62,7 @@ class Todo {
         },
       })
 
-      todo.completed = !todo.completed
+      todo.status = !todo.status
       await todo.save()
     } catch (e) {
       return Promise.reject()
