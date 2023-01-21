@@ -1,4 +1,4 @@
-import ModelTodo from '../model/Todo'
+const ModelTodo = require('../model/Todo')
 
 class Todo {
   async create({ title, description, user_id }) {

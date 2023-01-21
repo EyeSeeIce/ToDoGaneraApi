@@ -1,8 +1,5 @@
-import ModelUser from '../model/User'
-import tokenService, { generateAccessToken } from '../utils/tokenService'
-import s3client from '../utils/s3/s3client'
-import path from 'path'
-import fs from 'fs'
+const ModelUser = require('../model/User')
+const generateAccessToken = require('../utils/tokenService')
 
 class User {
   async create(data) {
@@ -53,7 +50,7 @@ class User {
       })
     }
 
-    return tokenService(response.dataValues)
+    return generateAccessToken(response.dataValues)
   }
 
   async getOne({ uuid }) {
@@ -82,4 +79,4 @@ class User {
 
 const user = new User()
 
-export default user
+module.exports = user

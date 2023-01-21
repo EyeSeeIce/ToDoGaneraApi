@@ -1,5 +1,5 @@
-import { DataTypes, Model } from 'sequelize'
-import s from '../db/conntection'
+const { DataTypes, Model } = require('sequelize')
+const s = require('../db/conntection')
 
 class Todo extends Model {}
 
@@ -49,4 +49,4 @@ Todo.init(
   },
 )
 
-export default Todo
+module.exports = Todo

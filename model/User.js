@@ -1,7 +1,9 @@
-import { DataTypes, Model, UUIDV4 } from 'sequelize'
-import s from '../db/conntection'
-import { compare, compareSync, genSaltSync, hash, hashSync } from 'bcrypt'
-import Todo from '../model/Todo'
+const { DataTypes, Model, UUIDV4 } = require('sequelize')
+const s = require('../db/conntection')
+const { compare, compareSync, genSaltSync, hash, hashSync } = require('bcrypt')
+
+const Todo = require('../model/Todo')
+
 class User extends Model {}
 
 User.init(
@@ -63,4 +65,4 @@ Todo.belongsTo(User, {
   foreignKey: 'user_id',
 })
 
-export default User
+module.exports = User

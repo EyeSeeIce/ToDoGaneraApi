@@ -1,7 +1,7 @@
-import { compare } from 'bcrypt'
+const { compare } = require('bcrypt')
 
 const validatePassword = async (password, bdPassword) => {
   return await compare(password, bdPassword)
 }
 
-export default validatePassword
+module.exports = validatePassword

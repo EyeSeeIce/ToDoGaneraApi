@@ -21,4 +21,4 @@ const authOnly = (req, res, next) => {
   }
 }
 
-export default authOnly
+module.exports = authOnly

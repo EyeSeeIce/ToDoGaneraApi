@@ -1,4 +1,4 @@
-import S3 from 'aws-sdk/clients/s3'
+const S3 = require('aws-sdk/clients/s3')
 
 const bucketParams = { Bucket: 'co95399-cutaway' } // <--- заменить
 const uploadParams = { Bucket: bucketParams.Bucket, Key: '', Body: '' }
@@ -12,4 +12,4 @@ const s3client = new S3({
   region: 'ru-1',
 })
 
-export default s3client
+module.exports = s3client

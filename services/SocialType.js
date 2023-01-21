@@ -1,4 +1,4 @@
-import Model from '../model/SocialType'
+const Model = require('../model/SocialType')
 
 class Link {
   async create({ value, title, domain, user_id }) {

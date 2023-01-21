@@ -1,4 +1,4 @@
-import { sign } from 'jsonwebtoken'
+const { sign } = require('jsonwebtoken')
 
 const generateAccessToken = payload => {
 
@@ -7,4 +7,4 @@ const generateAccessToken = payload => {
   })
 }
 
-export default generateAccessToken
+module.exports = generateAccessToken

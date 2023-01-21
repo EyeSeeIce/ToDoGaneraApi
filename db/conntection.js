@@ -5,4 +5,4 @@ const s = new Sequelize('default_db', 'gen_user', 'pj2lqupri0', {
   dialect: 'postgres',
 })
 
-export default s
+module.exports = s

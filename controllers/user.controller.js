@@ -1,5 +1,5 @@
-import user from '../services/User'
-import formDataParser from '../utils/formDataParser'
+const user = require('../services/User')
+const formDataParser = require('../utils/formDataParser')
 
 const getOne = async (req, res) => {
   try {
@@ -33,6 +33,6 @@ const create = async (req, res) => {
   }
 }
 
-export default {
+module.exports = {
   getOne, create
 }

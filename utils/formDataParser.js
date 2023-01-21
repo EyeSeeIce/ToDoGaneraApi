@@ -1,4 +1,4 @@
-import formidable from 'formidable'
+const formidable = require('formidable')
 
 const form = formidable({ multiples: false });
 
@@ -23,4 +23,4 @@ const formDataParser = async (req) => {
   }
 }
 
-export default formDataParser
+module.exports = formDataParser

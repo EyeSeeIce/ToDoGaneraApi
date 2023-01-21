@@ -1,5 +1,4 @@
-
-import user from '../services/User'
+const user = require('../services/User')
 
 const jwt = require('jsonwebtoken')
 
@@ -51,7 +50,7 @@ const check = async (req, res) => {
   }
 }
 
-export default {
+module.exports = {
   create,
   auth,
   check,

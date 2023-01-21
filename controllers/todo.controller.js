@@ -50,6 +50,7 @@ const update = async (req, res) => {
   }
 }
 
-export default {
+module.exports = {
   create, getAll, update
 }
+

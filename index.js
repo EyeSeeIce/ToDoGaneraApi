@@ -1,11 +1,10 @@
-import express from 'express'
-import s from './db/conntection'
-import cors from 'cors'
-import authRouter from './routes/auth.router'
-import { userRouter } from './routes'
-import authOnly from './middlewares/auth.middleware'
-import todoRouter from './routes/todo.router'
-
+const express = require('express')
+const cors = require('cors')
+const authOnly = require('./middlewares/auth.middleware')
+const authRouter = require('./routes/auth.router')
+const userRouter = require('./routes/user.router')
+const todoRouter = require('./routes/todo.router')
+const s = require('./db/conntection')
 
 require('dotenv').config({ path: `.env` })
 
