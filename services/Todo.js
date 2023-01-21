@@ -61,9 +61,8 @@ class Todo {
           user_id
         },
       })
-      console.log(todo.status)
+
       todo.status = !todo.status
-      console.log(todo.status)
       await todo.save()
     } catch (e) {
       return Promise.reject()
