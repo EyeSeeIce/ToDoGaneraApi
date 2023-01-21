@@ -66,6 +66,9 @@ const complete = async (req, res) => {
     const { user_id, params: { id }} = req
 
     await todo.complete({ user_id, todo_id: id})
+    res.send({
+      message: 'ok'
+    })
   }catch (e) {
     res.status(400).send({ message: e.message })
   }
