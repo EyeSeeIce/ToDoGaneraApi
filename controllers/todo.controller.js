@@ -50,7 +50,28 @@ const update = async (req, res) => {
   }
 }
 
+const deleteTodo = async (req, res) => {
+  try {
+    const { user_id, params: { id }} = req
+
+    await todo.delete({ user_id, todo_id: id})
+
+  } catch (e) {
+    res.status(400).send({ message: e.message })
+  }
+}
+
+const complete = async (req, res) => {
+  try {
+    const { user_id, params: { id }} = req
+
+    await todo.complete({ user_id, todo_id: id})
+  }catch (e) {
+    res.status(400).send({ message: e.message })
+  }
+}
+
 module.exports = {
-  create, getAll, update
+  create, getAll, update, deleteTodo, complete
 }
 

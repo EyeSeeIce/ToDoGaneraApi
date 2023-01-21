@@ -1,4 +1,5 @@
 const ModelTodo = require('../model/Todo')
+const { re } = require('@babel/core/lib/vendor/import-meta-resolve')
 
 class Todo {
   async create({ title, description, user_id }) {
@@ -34,6 +35,36 @@ class Todo {
 
       await todo.save()
     } else {
+      return Promise.reject()
+    }
+  }
+
+  async delete({ user_id, todo_id}) {
+    try {
+      const todo = await ModelTodo.findOne({
+        where: {
+          id: todo_id,
+          user_id
+        },
+      })
+      await todo.destroy()
+    } catch (e) {
+      return Promise.reject()
+    }
+  }
+
+  async complete({ user_id, todo_id}) {
+    try {
+      const todo = await ModelTodo.findOne({
+        where: {
+          id: todo_id,
+          user_id
+        },
+      })
+
+      todo.completed = !todo.completed
+      await todo.save()
+    } catch (e) {
       return Promise.reject()
     }
   }

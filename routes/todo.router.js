@@ -6,5 +6,7 @@ const router = express.Router()
 router.post('/', [authOnly], todoController.create)
 router.get('/', [authOnly], todoController.getAll)
 router.patch('/:id', [authOnly], todoController.update)
+router.patch('/complete/:id', [authOnly], todoController.update)
+router.delete('/:id', [authOnly], todoController.deleteTodo)
 
 module.exports = router
