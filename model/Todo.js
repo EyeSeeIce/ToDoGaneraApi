@@ -41,6 +41,15 @@ Todo.init(
           msg: 'user_id is required field',
         },
       },
+    },
+    date: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      validate: {
+        notNull: {
+          msg: 'date is required field',
+        },
+      }
     }
   },
   {

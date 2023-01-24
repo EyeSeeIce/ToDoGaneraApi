@@ -7,12 +7,13 @@ const create = async (req, res) => {
       user_id
     } = req
 
-    await todo.create({
+    const newTodo = await todo.create({
       title, description, user_id
     })
 
     res.send({
       message: 'Todo has been created',
+      data: newTodo
     })
   } catch (e) {
 

@@ -5,6 +5,7 @@ const authRouter = require('./routes/auth.router')
 const userRouter = require('./routes/user.router')
 const todoRouter = require('./routes/todo.router')
 const s = require('./db/conntection')
+const ModelTodo = require('./model/Todo')
 
 require('dotenv').config({ path: `.env` })
 
@@ -25,7 +26,7 @@ app.use('/api/v1/user', [authOnly], userRouter)
 app.use('/api/v1/todo', [authOnly], todoRouter)
 
 
-app.use('/api/v1/orm/sync', () => s.sync({ force: true }))
+app.use('/api/v1/orm/sync', () => ModelTodo.sync({ force: true }))
 
 
 app.use('/api/v1/test', async (req, res) => {

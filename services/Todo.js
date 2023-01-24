@@ -7,6 +7,7 @@ class Todo {
     const todo = await ModelTodo.create({
       description, title, user_id,
     })
+    return todo
   }
 
   async getAll({ id }) {
