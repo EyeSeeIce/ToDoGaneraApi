@@ -4,10 +4,12 @@ const jwt = require('jsonwebtoken')
 
 const create = async (req, res) => {
   try {
+    const { user_name, user_password } = req.body
     await user.create(req.body)
-
+    const accessToken = await user.auth({ user_name, user_password })
     res.send({
       message: 'User has been created',
+      data: { token: accessToken  }
     })
   } catch (e) {
     res.status(400).send({ message: '', errors: e.errors?.map(e => ({ field: e.path, message: e.message })) })
