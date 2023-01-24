@@ -3,12 +3,12 @@ const todo = require('../services/Todo')
 const create = async (req, res) => {
   try {
     const {
-      body: { title, description },
+      body: { title, description, date },
       user_id
     } = req
 
     const newTodo = await todo.create({
-      title, description, user_id
+      title, description, user_id, date
     })
 
     res.send({
@@ -16,7 +16,7 @@ const create = async (req, res) => {
       data: newTodo
     })
   } catch (e) {
-
+    console.log(e.message)
     res.status(400).send({ message: e.errors?.map(e => ({ field: e.path, message: e.message })) })
   }
 }

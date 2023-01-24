@@ -2,11 +2,9 @@ const ModelTodo = require('../model/Todo')
 const { re } = require('@babel/core/lib/vendor/import-meta-resolve')
 
 class Todo {
-  async create({ title, description, user_id }) {
+  async create(body) {
 
-    const todo = await ModelTodo.create({
-      description, title, user_id,
-    })
+    const todo = await ModelTodo.create(body)
     return todo
   }
 
