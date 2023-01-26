@@ -71,7 +71,7 @@ const complete = async (req, res) => {
       message: 'ok'
     })
   }catch (e) {
-    res.status(400).send({ message: e.message })
+    res.status(400).send({ message: e?.message ?? 'Соси' })
   }
 }
 
