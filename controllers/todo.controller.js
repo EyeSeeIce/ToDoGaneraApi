@@ -58,7 +58,7 @@ const deleteTodo = async (req, res) => {
     await todo.delete({ user_id, todo_id: id})
 
   } catch (e) {
-    res.status(400).send({ message: e.message })
+    res.status(400).send({ message: e?.message ?? 'Соси' })
   }
 }
 
